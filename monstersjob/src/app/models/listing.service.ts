@@ -33,8 +33,12 @@ export class ListingService {
   getVideoListing() {
     if (this.loading)  return this.videoListing;
 
+    const today = new Date();
+    const day = today.getDay();
+    const hour = today.getHours();
+    const minutes = today.getMinutes();
     this.loading = true;
-    let requestSubject = this.http.get('assets/videos.json');
+    let requestSubject = this.http.get(`assets/videos.json?nocache=${day}${hour}${minutes}`);
     requestSubject.subscribe(
       (data) => {
         this.videoListing.next(data);
