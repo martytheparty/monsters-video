@@ -1,0 +1,10 @@
+<div *ngFor="let video of videos">
+  <mat-card *ngIf="video.id === selectedVideo.id">
+    <div class="title">{{video.title}}</div>
+    <video controls *ngIf="video.id === selectedVideo.id && loaded">
+      <source
+        src="{{mediaPath}}{{video.src}}"
+        type="video/mp4">
+    </video>
+  </mat-card>
+</div>

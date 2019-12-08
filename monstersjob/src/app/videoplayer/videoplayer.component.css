@@ -1,0 +1,19 @@
+video {
+  margin: auto;
+  max-height: 80%;
+  max-width: 80%;
+}
+
+mat-card .title {
+  text-align: center;
+  margin:10px;
+  position: absolute;
+  width: 100%
+}
+
+mat-card {
+  margin: auto;
+  display: block;
+  text-align: center;
+  width: 90%;
+}

@@ -1,0 +1,4 @@
+<mat-card *ngFor="let video of videos" (click)="setCurrent(video)">
+  <mat-card-title>{{video.title}}</mat-card-title>
+  <mat-card-content>{{video.venue}}</mat-card-content>
+</mat-card>
