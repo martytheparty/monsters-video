@@ -21,7 +21,9 @@ export class VideoListComponent implements OnInit {
     ) {
       listingService.getVideoListingSubscription().subscribe(
         (data) => {
-          this.videos = data;
+          if(data) {
+            this.videos = data.reverse();
+          }
         }
       );
     }
