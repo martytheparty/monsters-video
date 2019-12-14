@@ -21,13 +21,14 @@ export class VideoplayerComponent implements OnInit {
 
   ngOnInit() {
     this.mediaPath = environment.mediaUrl;
-    //this.videos = this.listingService.getVideos() ;
     this.listingService.getVideoListingSubscription().subscribe(
         (data) => {
           this.videos = data;
           this.loaded = true;
           this.route.paramMap.subscribe(paramMap => {
-            if (this.videos.length) {
+            if (!paramMap.get('id')) {
+              this.selectedVideo = this.videos[0];
+            } else if (this.videos.length) {
               this.selectedVideo = this.videos.find((video) => { return (video.id === paramMap.get('id'));});
             }
 

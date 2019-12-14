@@ -1,4 +1,8 @@
-<mat-card *ngFor="let video of videos" (click)="setCurrent(video)">
+<mat-card *ngFor="let video of videos; index as i " (click)="setCurrent(video)">
   <mat-card-title>{{video.title}}</mat-card-title>
-  <mat-card-content>{{video.venue}}</mat-card-content>
+  <mat-card-content>
+    <h3>{{video.band}}</h3>
+    <p>{{video.venue}}</p>
+    <div>{{i + 1}} of {{videos.length}}</div>
+  </mat-card-content>
 </mat-card>

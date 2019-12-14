@@ -17,3 +17,15 @@ mat-card {
   text-align: center;
   width: 90%;
 }
+
+:host {
+  display: block;
+  position: relative;
+  margin: auto;
+}
+
+.nav-shell {
+  width: 95%;
+  overflow: auto;
+  margin: 0 auto;
+}
