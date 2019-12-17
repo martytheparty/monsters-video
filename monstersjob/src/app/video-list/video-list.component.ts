@@ -22,7 +22,15 @@ export class VideoListComponent implements OnInit {
       listingService.getVideoListingSubscription().subscribe(
         (data) => {
           if(data) {
-            this.videos = data.reverse();
+            this.videos = data.sort(
+              (vida, vidb) => {
+               if (vida.position < vidb.position) {
+                  return 1;
+               } else {
+                  return -1;
+               }
+              }
+             );
           }
         }
       );

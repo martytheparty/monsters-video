@@ -4,4 +4,5 @@ export interface Video {
   src: string;
   band: string;
   venue: string;
+  position: number;
 }
