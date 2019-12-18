@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ListingService } from '../models/listing.service';
 import { Video } from '../models/video';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,6 +13,7 @@ export class VideoListComponent implements OnInit {
   videos: any = [];
   video: Video;
   selectedVideo: Video;
+  @Input() selectedVideoId?: string;
 
   constructor(
     private route: ActivatedRoute,

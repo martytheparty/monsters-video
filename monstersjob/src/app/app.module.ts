@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { VideoListComponent } from './video-list/video-list.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatExpansionModule,
+    MatChipsModule,
     HttpClientModule
   ],
   providers: [],

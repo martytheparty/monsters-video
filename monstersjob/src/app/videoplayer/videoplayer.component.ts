@@ -27,7 +27,7 @@ export class VideoplayerComponent implements OnInit {
           this.loaded = true;
           this.route.paramMap.subscribe(paramMap => {
             if (!paramMap.get('id')) {
-              this.selectedVideo = this.videos[0];
+              this.selectedVideo = this.videos[this.videos.length - 1];
             } else if (this.videos.length) {
               this.selectedVideo = this.videos.find((video) => { return (video.id === paramMap.get('id'));});
             }

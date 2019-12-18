@@ -1,8 +1,31 @@
-<mat-card *ngFor="let video of videos; index as i " (click)="setCurrent(video)">
-  <mat-card-title>{{video.title}}</mat-card-title>
+<mat-card
+  *ngFor="let video of videos; index as i "
+  (click)="setCurrent(video)"
+  >
+
+  <mat-card-title>
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip
+        (click)="setCurrent(video)"
+        *ngIf="video.id === selectedVideoId"
+        color="accent"
+        selected>
+          &#10003; {{video.title}}
+      </mat-chip>
+      <mat-chip
+        (click)="setCurrent(video)"
+        *ngIf="video.id !== selectedVideoId"
+        selected>
+          {{video.title}}
+      </mat-chip>
+    </mat-chip-list>
+
+
+  </mat-card-title>
   <mat-card-content>
     <h3>{{video.band}}</h3>
     <p>{{video.venue}}</p>
-    <div>{{i + 1}} of {{videos.length}}</div>
+    <div></div>
   </mat-card-content>
+  <mat-card-subtitle>{{i + 1}} of {{videos.length}}</mat-card-subtitle>
 </mat-card>
