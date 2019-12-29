@@ -5,12 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import { VideoListComponent } from './video-list/video-list.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -18,7 +22,8 @@ import { VideoListComponent } from './video-list/video-list.component';
   declarations: [
     AppComponent,
     VideoplayerComponent,
-    VideoListComponent
+    VideoListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,10 @@ import { VideoListComponent } from './video-list/video-list.component';
     MatCardModule,
     MatExpansionModule,
     MatChipsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

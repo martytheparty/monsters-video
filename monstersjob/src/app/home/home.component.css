@@ -1,0 +1,16 @@
+table {
+  width: 100%
+}
+
+tr:hover {
+  color: #000000;
+  background-color: #CCCCCC;
+}
+
+.playbutton {
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 150px;
+  text-align: left;
+}

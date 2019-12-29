@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'video/:id', component: VideoplayerComponent },
-  { path: '', component: VideoplayerComponent }
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({

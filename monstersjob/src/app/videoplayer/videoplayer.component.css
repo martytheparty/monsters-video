@@ -29,3 +29,18 @@ mat-card {
   overflow: auto;
   margin: 0 auto;
 }
+
+
+@media only screen and (max-width: 600px) {
+  video {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+mat-icon {
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 25px;
+}

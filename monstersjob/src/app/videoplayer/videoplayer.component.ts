@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Video } from '../models/video';
 import { ListingService } from '../models/listing.service';
 import { environment } from '../../environments/environment';
@@ -17,7 +17,10 @@ export class VideoplayerComponent implements OnInit {
   loaded = false;
   mediaPath = '';
 
-  constructor(private route: ActivatedRoute, private listingService: ListingService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private listingService: ListingService,
+    private router: Router) { }
 
   ngOnInit() {
     this.mediaPath = environment.mediaUrl;
@@ -35,6 +38,10 @@ export class VideoplayerComponent implements OnInit {
           });
         }
     );
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 
 }
