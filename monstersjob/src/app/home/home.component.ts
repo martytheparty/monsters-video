@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ListingService } from '../models/listing.service';
 import { Video } from '../models/video';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { MusicFilterComponent } from '../modals/music-filter/music-filter.component';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +12,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  dialogRef: MatDialogRef<MusicFilterComponent>;
   videos: Video[] = [];
+  filteredVideos: Video[] = [];
   displayedColumns: string[] = [];
 
   constructor(
     private listingService: ListingService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
     ) { }
 
   ngOnInit() {
@@ -41,7 +46,33 @@ export class HomeComponent implements OnInit {
 
   rowClick(row: Video) {
     this.router.navigate([`/video/${row.id}`]);
-    console.log(row);
+  }
+
+  filterClick() {
+    const dialogRef = this.dialog.open(MusicFilterComponent, {
+      width: '400px',
+      data: {
+        videos: this.videos,
+        filteredVideos: this.filteredVideos,
+        setFilteredVideos: (videos) => {
+          this.filteredVideos = videos;
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      //console.log('The dialog was closed');
+    });
+
+
+  }
+
+  getVideos() {
+    let videos = this.videos;
+    if (this.filteredVideos.length > 0) {
+      videos = this.filteredVideos;
+    }
+    return videos;
   }
 
 }

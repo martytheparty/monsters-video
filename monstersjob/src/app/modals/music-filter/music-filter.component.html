@@ -1,0 +1,35 @@
+<table>
+  <tr><td colspan="2">showing {{filteredCount()}} of {{data.videos.length}} videos</td></tr>
+  <tr><td colspan="2"><h3>Filter By Band</h3></td></tr>
+  <tr *ngFor="let band of bands">
+    <td>
+      <input
+        type="checkbox"
+        (click)="selectBand(band)"
+        [checked]="selectedBands[band]">
+    </td>
+    <td>{{band}}</td>
+  </tr>
+  <tr><td colspan="2"><h3>Filter By Venue</h3></td></tr>
+  <tr *ngFor="let venue of venues">
+    <td>
+      <input
+        type="checkbox"
+        (click)="selectVenue(venue)"
+        [checked]="selectedVenues[venue]">
+    </td>
+    <td>{{venue}}</td>
+  </tr>
+  <tr><td colspan="2"><h3>Filter By Song</h3></td></tr>
+  <tr *ngFor="let song of songs">
+    <td>
+      <input
+        type="checkbox"
+        (click)="selectSong(song)"
+        [checked]="selectedSongs[song]">
+    </td>
+    <td>{{song}}</td>
+  </tr>
+</table>
+
+

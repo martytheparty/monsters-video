@@ -8,22 +8,24 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { HomeComponent } from './home/home.component';
-
-
+import { MusicFilterComponent } from './modals/music-filter/music-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoplayerComponent,
     VideoListComponent,
-    HomeComponent
+    HomeComponent,
+    MusicFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +37,22 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatBottomSheetModule,
+    MatDialogModule,
+    MatInputModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    }
+  ],
+  entryComponents: [
+    MusicFilterComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

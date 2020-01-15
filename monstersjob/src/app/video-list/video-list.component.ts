@@ -38,12 +38,6 @@ export class VideoListComponent implements OnInit {
     }
 
   ngOnInit() {
-    // this.videos = this.listingService.getVideos().reverse() ;
-    //
-    // this.route.paramMap.subscribe(params => {
-    //   console.log(params);
-    //   this.video = this.videos[0];
-    // });
   }
 
   setCurrent = (video: Video) => {

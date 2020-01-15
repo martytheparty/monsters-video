@@ -6,3 +6,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #333;
 }
+.cdk-overlay-pane {
+  height: 90vh;
+}
