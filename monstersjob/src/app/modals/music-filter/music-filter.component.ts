@@ -26,6 +26,8 @@ export class MusicFilterComponent implements OnInit {
     this.venues = [...new Set(venueListing)];
     const songListing = this.data.videos.map( video => video.title );
     this.songs = [...new Set(songListing)].sort();
+    this.data.filteredVideos = [];
+    this.executeFilters();
   }
 
   selectBand(band) {
@@ -137,6 +139,11 @@ export class MusicFilterComponent implements OnInit {
     } else {
       return this.data.videos.length;
     }
+  }
+
+  close() {
+    console.log('close');
+    this.dialogRef.close();
   }
 
 }
