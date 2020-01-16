@@ -23,16 +23,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  xit(`should have as title 'monstersjob'`, () => {
+  it(`should have an empty video listing`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('monstersjob');
+    expect(app.videos).toBeTruthy();
   });
 
-  xit('should render title', () => {
+  it('should render', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('monstersjob app is running!');
+    expect(compiled.querySelector('div').textContent).toContain('Video Listing Application');
   });
 });
