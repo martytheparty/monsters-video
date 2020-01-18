@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { MusicFilterComponent } from './music-filter.component';
 
 describe('MusicFilterComponent', () => {
@@ -8,7 +13,25 @@ describe('MusicFilterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MusicFilterComponent ]
+      declarations: [
+        MusicFilterComponent
+      ],
+      imports: [
+        MatIconModule,
+        HttpClientTestingModule,
+        MatDialogModule
+      ],
+      providers: [
+        { provide: MAT_DIALOG_DATA,
+          useValue: {
+            videos: [],
+            setFilteredVideos: () => []
+          } },
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        }
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +42,7 @@ describe('MusicFilterComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
