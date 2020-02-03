@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,7 +42,8 @@ import { MusicFilterComponent } from './modals/music-filter/music-filter.compone
     MatIconModule,
     MatBottomSheetModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   providers: [
     {

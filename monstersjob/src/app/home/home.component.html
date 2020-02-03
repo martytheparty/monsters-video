@@ -3,6 +3,12 @@
 color="accent"
 aria-hidden="false"
 aria-label="Example home icon">search</mat-icon>
+<mat-paginator [length]="recordCount"
+              [pageIndex]="pageIndex"
+              [pageSize]="recordsPerPage"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              (page)="changePage($event)">
+</mat-paginator>
 <table mat-table [dataSource]="getVideos()" class="mat-elevation-z8">
 
   <!-- Name Column -->

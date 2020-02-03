@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   videos: Video[] = [];
   filteredVideos: Video[] = [];
   displayedColumns: string[] = [];
+  recordCount = 0;
+  recordsPerPage = 10;
+  pageIndex = 0;
 
   constructor(
     private listingService: ListingService,
@@ -72,7 +75,26 @@ export class HomeComponent implements OnInit {
     if (this.filteredVideos.length > 0) {
       videos = this.filteredVideos;
     }
-    return videos;
+    setTimeout(
+      () => {
+        this.recordCount = videos.length;
+      }
+    );
+    const first = this.pageIndex * this.recordsPerPage;
+    const last = this.pageIndex * this.recordsPerPage + this.recordsPerPage;
+    const displayVideos = videos.filter(
+      (video, i) => {
+        if (i >= first && i < last) {
+          return video;
+        }
+      }
+     );
+    return displayVideos;
+  }
+
+  changePage(event) {
+    this.pageIndex = event.pageIndex;
+    this.recordsPerPage = event.pageSize;
   }
 
 }

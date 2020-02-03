@@ -27,7 +27,7 @@ tr.mat-header-row:hover {
 mat-icon {
   position: fixed;
   top:0;
-  right:0;
+  left:0;
   z-index:10;
   padding: 10px;
   cursor: pointer;
