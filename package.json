@@ -8,7 +8,7 @@
     "ng": "ng",
     "server": "http-server ./videos -p 8080 ",
     "prodserver": "http-server ./monstersjob/dist/monstersjob -p 8081",
-    "cpvideos": "cp -r videos/media monstersjob/dist/monstersjob/media"
+    "cpvideos": "cp -r videos/media monstersjob/dist/monstersjob"
   },
   "keywords": [],
   "author": "",
