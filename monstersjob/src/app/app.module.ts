@@ -16,7 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+import { VideoPlayerModule } from './videoplayer/videoplayer.module';
 import { VideoListComponent } from './video-list/video-list.component';
 import { HomeComponent } from './home/home.component';
 import { MusicFilterComponent } from './modals/music-filter/music-filter.component';
@@ -24,7 +24,6 @@ import { MusicFilterComponent } from './modals/music-filter/music-filter.compone
 @NgModule({
   declarations: [
     AppComponent,
-    VideoplayerComponent,
     VideoListComponent,
     HomeComponent,
     MusicFilterComponent
@@ -43,7 +42,8 @@ import { MusicFilterComponent } from './modals/music-filter/music-filter.compone
     MatBottomSheetModule,
     MatDialogModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    VideoPlayerModule
   ],
   providers: [
     {
