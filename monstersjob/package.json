@@ -12,7 +12,8 @@
     "upgrade8": "ng update @angular/core@8 @angular/cli@8",
     "upgrade9": "ng update @angular/core @angular/cli",
     "upgrade9material": "ng update @angular/material",
-    "update": "ng update"
+    "update": "ng update",
+    "materialModule": "ng generate module material-design"
   },
   "private": true,
   "dependencies": {

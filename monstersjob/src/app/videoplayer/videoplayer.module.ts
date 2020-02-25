@@ -2,14 +2,12 @@
 import { NgModule } from '@angular/core';
 import { VideoplayerComponent } from './videoplayer.component';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { MaterialDesignModule } from '../material-design/material-design.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule,
-    MatIconModule
+    MaterialDesignModule
   ],
   declarations: [
     VideoplayerComponent
