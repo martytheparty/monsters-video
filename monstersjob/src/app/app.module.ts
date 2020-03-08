@@ -32,10 +32,11 @@ import { MusicFilterComponent } from './modals/music-filter/music-filter.compone
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    VideoPlayerModule,
     MatCardModule,
     MatExpansionModule,
     MatChipsModule,
-    HttpClientModule,
     MatTableModule,
     MatButtonModule,
     MatIconModule,
@@ -43,7 +44,6 @@ import { MusicFilterComponent } from './modals/music-filter/music-filter.compone
     MatDialogModule,
     MatInputModule,
     MatPaginatorModule,
-    VideoPlayerModule
   ],
   providers: [
     {
