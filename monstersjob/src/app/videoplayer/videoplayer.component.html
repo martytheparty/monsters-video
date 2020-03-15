@@ -1,7 +1,7 @@
 
 
-<div *ngIf="selectedVideo">
-  <div *ngFor="let video of videos">
+<div *ngIf="selectedVideo" class="selected-video">
+  <div class="videos" *ngFor="let video of videos">
     <mat-card *ngIf="video.id === selectedVideo.id">
       <mat-icon
         (click)="goHome()"
