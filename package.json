@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ng": "ng",
+    
     "server": "http-server ./videos -p 8080 ",
     "prodserver": "http-server ./monstersjob/dist/monstersjob -p 8081",
     "cpvideos": "cp -r videos/media monstersjob/dist/monstersjob"
